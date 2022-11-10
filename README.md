@@ -1,1 +1,1 @@
-# wantsome-net7-group
+# Wantsome training
