@@ -1,8 +1,11 @@
 ﻿// TODO catch (Exception) vs multiple exceptions catch
 
 using Week7.ExceptionsAndLinq;
+using Week7.ExceptionsAndLinq.University;
 
-new EmailsChecker().ReadAndCheckEmails();
+UniveristyManagement.Run();
+
+//new EmailsChecker().ReadAndCheckEmails();
 
 //Student student = new Student
 //{
