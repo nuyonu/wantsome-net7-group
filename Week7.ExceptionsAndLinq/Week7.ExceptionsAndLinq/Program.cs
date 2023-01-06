@@ -1,133 +1,107 @@
-﻿// TODO catch (Exception) vs multiple exceptions catch
+﻿using Week7.ExceptionsAndLinq;
 
-using Week7.ExceptionsAndLinq;
-using Week7.ExceptionsAndLinq.University;
+// Exercise 8:
+// Given a list of integers, use LINQ to compute the sum of the squares of the even numbers in the list.
+// Hint: Where, Sum, Select
 
-UniveristyManagement.Run();
+// 1 2 3 => 1 + 4 + 9 = 14
 
+//var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//Console.WriteLine(numbers.Sum(x => x * x));
+
+DemoLINQ.Run();
+
+// Immediate execution LINQ
+//var numbers = new List<int>() { 1, 2, 3, 4 };
+
+//var query = numbers.Where(number => number % 2 == 0).ToList(); // Aici SELECT * FROM ...
+
+//numbers.Add(6);
+
+//var query2 = query.Select(number => number * 2); // Peste lista incarcata in memorie
+
+//foreach(var number in query2)
+//{
+//    Console.WriteLine(number);
+//}
+
+// Deferred execution LINQ -> 4 8 12
+//var numbers = new List<int>() { 1, 2, 3, 4 };
+
+//var query = numbers.Where(number => number % 2 == 0); // AICI nu se incarca nimic
+
+//numbers.Add(6);
+
+//query = query.Select(number => number * 2); // Aici SELECT * FROM ...
+
+//foreach (var number in query)
+//{
+//    Console.WriteLine(number);
+//}
+
+
+
+
+
+
+//Console.WriteLine(IsPalindrom("ana"));
+//Console.WriteLine(IsPalindrom("abca"));
+
+//bool IsPalindrom(string input) // ana -> a = a n = n abccba // 3
+//{
+//    int length = input.Length;
+
+//    for(int index = 0; index < length / 2; index++)
+//    {
+//        if (input[index] != input[length - index - 1])
+//        {
+//            return false;
+//        }
+//    }
+
+//    return true;
+//}
+
+//Console.WriteLine(SumThreeNumbers(1,2,3));
+
+//Func<int, int, int, int> sumThreeNumbers = (a, b, c) => a + b + c;
+
+//Console.WriteLine(sumThreeNumbers(1, 2, 3));
+
+//int SumThreeNumbers(int a, int b, int c)
+//{
+//    return a + b + c;
+//}
+
+//var anonymous = new { Name = "Alex", Age = 13, CNP = "123213123" };
+
+//Console.WriteLine(anonymous.Name);
+//Console.WriteLine(anonymous.Age);
+//Console.WriteLine(anonymous.CNP);
+
+//UniveristyManagement.Run();
+//Exceptions.Run();
 //new EmailsChecker().ReadAndCheckEmails();
 
-//Student student = new Student
-//{
-//    Id = 1
-//};
+// Catch vs multiple exceptions catch
 
-//while (true)
-//{
-//    Console.WriteLine("Insert your name");
+//WorkWithFiles.Run();
 
-//    string name = Console.ReadLine();
+//Console.WriteLine(5.Square());
+//Console.WriteLine(IntExtensions.SquareWithoutExtension(5));
 
-//    try
-//    {
-//        student.Name = name;
-//    }
-//    catch (NameException nameException)
-//    {
-//        Console.WriteLine(nameException.Message);
-//    }
+public static class IntExtensions
+{
+    public static int Square(this int number)
+    {
+        return number * number;
+    }
 
-//    if (!string.IsNullOrEmpty(student.Name))
-//    {
-//        break;
-//    }
-//}
+    public static int SquareWithoutExtension(int number)
+    {
+        return number * number;
+    }
+}
 
-//while (true)
-//{
-//    Console.WriteLine("Insert your email");
-
-//    string email = Console.ReadLine();
-
-//    try
-//    {
-//        student.Email = email;
-//    }
-//    catch (EmailException emailException)
-//    {
-//        Console.WriteLine(emailException.Message);
-//    }
-
-//    if (!string.IsNullOrEmpty(student.Email))
-//    {
-//        break;
-//    }
-//}
-
-//HowToWriteCatch();
-//WithFinallyOnFunctionWithoutReturn();
-//WithFinallyOnFunctionWithReturn();
-
-//int WithoutFinallyOnFunctionWithReturn()
-//{
-//    try
-//    {
-//        return 0;
-//    }
-//    catch (Exception ex)
-//    {
-//        Console.WriteLine();
-//        return 1;
-//    }
-//}
-
-//void WithFinallyOnFunctionWithoutReturn()
-//{
-//    try
-//    {
-//        Console.WriteLine("Try");
-//    }
-//    catch (Exception ex)
-//    {
-//        Console.WriteLine("Catch");
-//    }
-
-//    //Console.WriteLine("Finally");
-
-//    // OR
-
-//    //finally
-//    //{
-//    //    Console.WriteLine("Finally");
-//    //}
-//}
-
-//int WithFinallyOnFunctionWithReturn()
-//{
-//    try
-//    {
-//        Console.WriteLine("Try");
-//        return 0;
-//    }
-//    catch (Exception ex)
-//    {
-//        Console.WriteLine("Catch");
-//        return 1;
-//    }
-//    finally 
-//    {
-//        Console.WriteLine("Finally");
-//    }
-//}
-
-//int HowToWriteCatch()
-//{
-//    try
-//    {
-//        throw new ArgumentNullException();
-//        Console.WriteLine("Try");
-//        return 0;
-//    }
-//    catch (ArgumentNullException ex)
-//    {
-//        throw new NameException();
-//        Console.WriteLine(ex.Message);
-//        Console.WriteLine("Catch");
-//        return 1;
-//    }
-//    finally
-//    {
-//        Console.WriteLine("Finally");
-//    }
-//}
-
+// IsPalindrom : string => TRUE if string is palindrom or FALSE if not -> aceeca, ana,

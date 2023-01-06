@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Week7.ExceptionsAndLinq
+﻿namespace Week7.ExceptionsAndLinq.Exceptions
 {
     public class EmailsChecker
     {
@@ -26,7 +20,7 @@ namespace Week7.ExceptionsAndLinq
 
                 Console.WriteLine("All emails are ok.");
             }
-            catch (InvalidEmailException exception) 
+            catch (InvalidEmailException exception)
             {
                 Console.WriteLine(exception.Message);
             }
@@ -35,7 +29,7 @@ namespace Week7.ExceptionsAndLinq
 
         private void CheckAllEmails(List<string> emails)
         {
-            foreach(string email in emails)
+            foreach (string email in emails)
             {
                 if (!IsAValidEmail(email))
                 {

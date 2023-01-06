@@ -1,4 +1,4 @@
-﻿namespace Week7.ExceptionsAndLinq
+﻿namespace Week7.ExceptionsAndLinq.Exceptions
 {
     public class Student
     {
@@ -7,11 +7,11 @@
 
         public int Id { get; set; }
 
-        public string Name 
-        { 
+        public string Name
+        {
             get
             {
-                return name; 
+                return name;
             }
             set
             {
@@ -26,10 +26,10 @@
                 }
 
                 name = value;
-            } 
+            }
         }
 
-        public string Email 
+        public string Email
         {
             get { return email; }
             set
@@ -39,7 +39,7 @@
                     throw new EmailException("Invalid email.");
                 }
 
-                if (!value.Contains("@") || !value.Contains(".")) 
+                if (!value.Contains("@") || !value.Contains("."))
                 {
                     throw new EmailException("Invalid email.");
                 }
@@ -51,6 +51,10 @@
 
     public class NameException : Exception
     {
+        public NameException()
+        {
+        }
+
         public NameException(string? message) : base(message)
         { }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Week7.ExceptionsAndLinq.University
+﻿namespace Week7.ExceptionsAndLinq.University
 {
     public static class StorageHelper
     {
